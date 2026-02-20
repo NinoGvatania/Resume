@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="50%" stop-color="#2a2535"/>
+      <stop offset="100%" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0E4D3"/>
+      <stop offset="100%" stop-color="#D4C0A8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="rgba(240,228,211,0.12)"/>
+      <stop offset="100%" stop-color="rgba(240,228,211,0)"/>
+    </radialGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bg)"/>
+
+  <!-- Subtle glow -->
+  <circle cx="200" cy="200" r="200" fill="url(#glow)"/>
+
+  <!-- Decorative geometric elements -->
+  <line x1="60" y1="320" x2="340" y2="320" stroke="rgba(240,228,211,0.06)" stroke-width="0.5"/>
+  <line x1="60" y1="340" x2="340" y2="340" stroke="rgba(240,228,211,0.04)" stroke-width="0.5"/>
+
+  <!-- Person silhouette - stylized -->
+  <!-- Head -->
+  <circle cx="200" cy="145" r="58" fill="url(#accent)" opacity="0.9"/>
+
+  <!-- Body/Shoulders -->
+  <ellipse cx="200" cy="310" rx="105" ry="80" fill="url(#accent)" opacity="0.9" clip-path="url(#circle)"/>
+
+  <!-- Suit collar lines for professional look -->
+  <path d="M200 203 L160 280 L140 390" stroke="url(#bg)" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M200 203 L240 280 L260 390" stroke="url(#bg)" stroke-width="4" fill="none" opacity="0.6"/>
+
+  <!-- Tie suggestion -->
+  <path d="M195 210 L200 290 L205 210 Z" fill="url(#bg)" opacity="0.35"/>
+</svg>

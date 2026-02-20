@@ -88,27 +88,39 @@ nav {
 }
 .hero-avatar {
   position: relative; margin-bottom: 32px;
+  display: inline-block;
   animation: fadeUp 0.8s ease both;
 }
 .hero-avatar::before {
   content: '';
-  position: absolute; inset: -8px;
+  position: absolute; inset: -6px;
   border-radius: 50%;
-  border: 2px solid rgba(240,228,211,0.2);
-  animation: pulse 6s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(240,228,211,0.25), rgba(212,192,168,0.08), rgba(240,228,211,0.25));
+  animation: avatarRotate 8s linear infinite;
+  z-index: 0;
 }
 .hero-avatar::after {
   content: '';
-  position: absolute; inset: -18px;
+  position: absolute; inset: -14px;
   border-radius: 50%;
-  border: 1px solid rgba(240,228,211,0.08);
+  border: 1px solid rgba(240,228,211,0.06);
+}
+@keyframes avatarRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .hero-avatar img {
-  width: 160px; height: 160px;
+  width: 150px; height: 150px;
   border-radius: 50%; object-fit: cover;
-  border: 3px solid rgba(240,228,211,0.15);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(240,228,211,0.08);
+  border: 2.5px solid rgba(240,228,211,0.2);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 60px rgba(240,228,211,0.06);
   position: relative; z-index: 1;
+  background: var(--card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-avatar:hover img {
+  transform: scale(1.04);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.5), 0 0 80px rgba(240,228,211,0.1);
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -448,7 +460,7 @@ footer .logo { font-size: 1rem; }
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-avatar">
-    <img src="photo.jpg" alt="Александр Ларин">
+    <img src="avatar.svg" alt="Александр Ларин">
   </div>
   <div class="hero-badge">AI Implementation Lead</div>
   <h1>Александр<br><span>Ларин</span></h1>
